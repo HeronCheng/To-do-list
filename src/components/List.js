@@ -1,5 +1,5 @@
 import React from "react";
-import ToDo from "./Todo";
+import ToDo from "./ToDo";
 
 const List = ({toDoList,setToDoList}) => {
 	const deleteItem = (id) => {
