@@ -2,17 +2,13 @@ import React from "react";
 import * as ReactDOM from "react-dom/client";
 import App from "./App";
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from 'firebase/app';
+import { getDatabase } from "firebase/database";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDLqUW3lVtYj2ZcIUdLZpbNnYg5v0inetg",
   authDomain: "to-do-list-b9996.firebaseapp.com",
+  databaseURL: "https://console.firebase.google.com/u/1/project/to-do-list-b9996/database/to-do-list-b9996-default-rtdb/data/~2F",
   projectId: "to-do-list-b9996",
   storageBucket: "to-do-list-b9996.appspot.com",
   messagingSenderId: "183227798243",
@@ -20,9 +16,12 @@ const firebaseConfig = {
   measurementId: "G-SE03YSQN89"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+// Get a reference to the database service
+const database = getDatabase(app);
+
+
 
 const container = document.getElementById( "root" );
 const root = ReactDOM.createRoot( container );
