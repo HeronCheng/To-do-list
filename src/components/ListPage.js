@@ -8,17 +8,13 @@ import {database, ref, push, onValue}  from "../firebaseConfig";
 
 
 const ListPage = () => {
-	let data;
 	const [ toDoList, setToDoList ] = useState([]);
 	let toDoListArr=ref(database, "/");
-	let list=[];
 	useEffect(()=>{
 		onValue(toDoListArr, (snapshot) => {
-			data =snapshot.val();
-			console.log(typeof(data));
-			console.log(data);
-			data.forEach(item => list.push(item));
-			setToDoList(toDoList.concat(list));
+			let predata =snapshot.val();
+			let data=Object.values(predata)
+			setToDoList(toDoList.concat(data));
 		});
 	},[])
 	
