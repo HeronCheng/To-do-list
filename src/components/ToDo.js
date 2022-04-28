@@ -28,7 +28,7 @@ const ToDo = (props) => {
 			<form onSubmit={handleDelete} id={todo.id}>
 			<div  key={todo.id + todo.task} name="todo" value={todo.id} className={todo.complete ? "hidden" : "flex items-center justify-center"}>
 				{todo.task}
-				<button className="p-4" onclick={handleFilter}><img src={deleteicon} className="w-8"/></button>
+				<button className="p-4" onClick={handleFilter}><img src={deleteicon} className="w-8"/></button>
 			</div>
 			</form>
 		</React.Fragment>
