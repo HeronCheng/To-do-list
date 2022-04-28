@@ -13,8 +13,8 @@ const ListPage = () => {
 	let toDoListArr= ref(database, "/");
 	onValue(toDoListArr, (snapshot) => {
 		data = snapshot.val();
-		console.log(data[0])
-		setToDoList(...toDoList,data[0]);
+
+		setToDoList(data);
 		console.log(toDoList)
 	});
 	console.log(toDoList)
