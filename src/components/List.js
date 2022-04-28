@@ -3,6 +3,10 @@ import ToDo from "./ToDo";
 
 
 const List = ({toDoList,setToDoList}) => {
+	console.log(toDoList);
+	let toDoValue=toDoList.map(item => item.task);
+	console.log(toDoValue);
+	
 	const deleteItem = (id) => {
 		// gets id of the button triggered
 		const index = toDoList.map(todo => todo.id).indexOf(Number(id));
@@ -16,8 +20,7 @@ const List = ({toDoList,setToDoList}) => {
 	
 	};
 	
-	let toDoValue=Object.values(toDoList).map(item => item.task);
-	console.log(toDoValue);
+	
 
 
 	return (
