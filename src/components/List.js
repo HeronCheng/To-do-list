@@ -3,8 +3,6 @@ import ToDo from "./ToDo";
 
 
 const List = ({toDoList,setToDoList}) => {
-
-	// let toDoValue=toDoList.map(item => item.task);
 	
 	return (
 		<React.Fragment >
