@@ -3,7 +3,7 @@ import deleteicon from "../img/garbage-can.png";
 import {database, ref,remove}  from "../firebaseConfig";
 
 const ToDo = (props) => {
-	const {todo}=props;
+	const {todo,toDoList,setToDoList}=props;
 	
 	const handleFilter = () => {
 		let filtered = toDoList.filter(task => {
