@@ -1,6 +1,6 @@
 import React from "react";
 import ToDo from "./ToDo";
-import {database, ref, onValue}  from "../firebaseConfig";
+
 
 const List = ({toDoList,setToDoList}) => {
 	const deleteItem = (id) => {
@@ -15,11 +15,7 @@ const List = ({toDoList,setToDoList}) => {
 		setToDoList(updatedList);
 	
 };
-	const starCountRef = ref(database, "/");
-		onValue(starCountRef, (snapshot) => {
-		const data = snapshot.val();
-		setToDoList(data);
-	});
+
 
 	return (
 		<React.Fragment >
