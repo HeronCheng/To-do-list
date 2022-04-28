@@ -12,7 +12,6 @@ const List = ({toDoList,setToDoList}) => {
 		// splices array .splice(index, 1)
 		updatedList.splice(index, 1);
         
-
 		setToDoList(updatedList);
 	
 };
