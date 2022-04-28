@@ -8,12 +8,13 @@ import {database, ref, push, onValue}  from "../firebaseConfig";
 
 
 const ListPage = () => {
-	
+	let data;
 	const [ toDoList, setToDoList ] = useState("");
 	let toDoListArr= ref(database, "/");
 	onValue(toDoListArr, (snapshot) => {
-		let data = snapshot.val();
+		data = snapshot.val();
 		setToDoList(data);
+		console.log(data)
 		console.log(toDoList)
 	});
 	console.log(toDoList)
