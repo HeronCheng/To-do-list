@@ -11,13 +11,16 @@ import {database, ref, onValue,update}  from "../firebaseConfig";
 const ListPage = () => {
 	const [ toDoList, setToDoList ] = useState([]);
 	let toDoListArr=ref(database, "/");
-	useEffect(()=>{
-		onValue(toDoListArr, (snapshot) => {
-			let predata =snapshot.val();
-			let data=Object.values(predata)
-			setToDoList(toDoList.concat(data));
-		});
-	},[])
+	if(toDoListArr === null){
+		useEffect(()=>{
+			onValue(toDoListArr, (snapshot) => {
+				let predata =snapshot.val();
+				let data=Object.values(predata)
+				setToDoList(toDoList.concat(data));
+			});
+		},[])
+	}
+	
 	
 
 	const addTask = ( userInput ) => {
