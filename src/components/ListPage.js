@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 //components
 import List from "./List";
@@ -20,7 +21,7 @@ const ListPage = () => {
 	
 
 	const addTask = ( userInput ) => {
-		let realId=Math.floor(Math.random()*10+1)
+		let realId=uuidv4()
 		let newData={
 			id: realId ,
 			task: userInput, 
