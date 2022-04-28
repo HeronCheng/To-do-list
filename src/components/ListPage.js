@@ -14,8 +14,8 @@ const ListPage = () => {
 	useEffect(()=>{
 		onValue(toDoListArr, (snapshot) => {
 			data =snapshot.val();
-			console.log(data[0]+data[1]+data[2])
-			setToDoList([...toDoList,data[0]+data[1]+data[2]]);
+			console.log(data[0])
+			data.forEach(item => setToDoList([...toDoList,item]));
 			console.log(toDoList)
 		});
 	},[])
