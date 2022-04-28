@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import data from "../data.json";
+
 //components
 import List from "./List";
 import AddForm from "./AddForm";
@@ -9,6 +9,12 @@ import {database, ref, push}  from "../firebaseConfig";
 
 
 const ListPage = () => {
+	let data;
+	const starCountRef = ref(database, "/");
+		onValue(starCountRef, (snapshot) => {
+		data = snapshot.val();
+	});
+
 	const [ toDoList, setToDoList ] = useState(data);
 	
 	const addTask = ( userInput ) => {

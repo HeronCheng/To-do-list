@@ -15,11 +15,7 @@ const List = ({toDoList,setToDoList}) => {
 		setToDoList(updatedList);
 	
 };
-	const starCountRef = ref(database, "/");
-		onValue(starCountRef, (snapshot) => {
-		const data = snapshot.val();
-		setToDoList(data);
-	});
+
 
 	return (
 		<React.Fragment >
