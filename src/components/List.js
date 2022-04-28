@@ -1,6 +1,6 @@
 import React from "react";
 import ToDo from "./ToDo";
-import {database, ref, onValue}  from "../firebaseConfig";
+
 
 const List = ({toDoList,setToDoList}) => {
 	const deleteItem = (id) => {
