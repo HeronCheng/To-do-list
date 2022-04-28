@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //components
 import List from "./List";
 import AddForm from "./AddForm";
-import {database, ref, push, onValue}  from "../firebaseConfig";
+import {database, ref, onValue}  from "../firebaseConfig";
 
 
 const ListPage = () => {
@@ -26,7 +26,7 @@ const ListPage = () => {
 			complete:false
 		}
 		const addTaskRef=ref(database,"/"+toDoList.length);
-		push(addTaskRef,newData);
+		update(addTaskRef,newData);
 		
 		let copy = [...toDoList];
 		copy = [...copy, newData];
