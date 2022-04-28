@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 //components
 import List from "./List";
 import AddForm from "./AddForm";
-import {database, ref, push,onValue}  from "../firebaseConfig";
+import {database, ref, push, onValue}  from "../firebaseConfig";
 
 
 const ListPage = () => {
