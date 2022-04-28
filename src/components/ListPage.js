@@ -4,12 +4,20 @@ import data from "../data.json";
 //components
 import List from "./List";
 import AddForm from "./AddForm";
+import {database, ref, set}  from "../firebaseConfig";
 
 
 
 const ListPage = () => {
 	const [ toDoList, setToDoList ] = useState(data);
+	
 	const addTask = ( userInput ) => {
+		let newData={
+			id: toDoList.length + 1,
+			task: userInput, 
+			complete: false
+		}
+		database.ref("/").set(newData);
 		let copy = [...toDoList];
 		copy = [...copy, { id: toDoList.length + 1, task: userInput, complete: false }];
 		setToDoList(copy);
