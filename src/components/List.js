@@ -14,19 +14,22 @@ const List = ({toDoList,setToDoList}) => {
         
 		setToDoList(updatedList);
 	
-};
+	};
+
+	let toDoListArr=toDoList.values.map(item => item.task);
 
 
 	return (
 		<React.Fragment >
-			{toDoList.map(todo => {
+			{toDoListArr.map(todo => {
 				return (
 					<>
 					<ToDo todo={todo} deleteItem={deleteItem} key={Math.random()} />
 					<div className="border-solid border-slate-200 border-b-2 w-1/3 mx-auto"></div>
 					</>
 				);
-			})}
+			}
+			)}
 		</React.Fragment>
 	);
 };
