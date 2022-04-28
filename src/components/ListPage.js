@@ -15,6 +15,7 @@ const ListPage = () => {
 	});
 
 	const [ toDoList, setToDoList ] = useState(data);
+	console.log(toDoList);
 	
 	const addTask = ( userInput ) => {
 		let newData={
