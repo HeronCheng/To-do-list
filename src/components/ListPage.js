@@ -11,12 +11,13 @@ const ListPage = () => {
 	let data;
 	const [ toDoList, setToDoList ] = useState([]);
 	let toDoListArr=ref(database, "/");
+	let list=[];
 	useEffect(()=>{
 		onValue(toDoListArr, (snapshot) => {
 			data =snapshot.val();
-			console.log(data[0])
-			data.forEach(item => setToDoList([...toDoList,item]));
-			console.log(toDoList)
+			data.forEach(item => list.push(item));
+			console.log(list)
+			setToDoList([...toDoList,list])
 		});
 	},[])
 	
