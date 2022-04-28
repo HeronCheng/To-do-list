@@ -1,6 +1,6 @@
 import React from "react";
 import deleteicon from "../img/garbage-can.png";
-
+import {database, ref,remove}  from "../firebaseConfig";
 
 const ToDo = (props) => {
 	const {todo, deleteItem}=props;
@@ -8,6 +8,8 @@ const ToDo = (props) => {
 		e.preventDefault();
 		e.stopPropagation();
 		deleteItem(e.currentTarget.parentNode.id);
+		
+		database.ref("/").remove(e.currentTarget.parentNode.id);
 	};
 	return (
 		<React.Fragment >
