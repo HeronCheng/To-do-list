@@ -20,7 +20,7 @@ const ListPage = () => {
 	
 
 	const addTask = ( userInput ) => {
-		let realId=Math.random()
+		let realId=Math.floor(Math.random()*10+1)
 		let newData={
 			id: realId ,
 			task: userInput, 
