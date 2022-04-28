@@ -15,6 +15,7 @@ const ListPage = () => {
 	useEffect(()=>{
 		onValue(toDoListArr, (snapshot) => {
 			data =snapshot.val();
+			data = JSON.parse(data);
 			data.forEach(item => list.push(item));
 			setToDoList(toDoList.concat(list));
 		});
