@@ -1,24 +1,17 @@
 import React from "react";
 import ToDo from "./ToDo";
-
+import {database, ref,remove}  from "../firebaseConfig";
 
 const List = ({toDoList,setToDoList}) => {
 
 	let toDoValue=toDoList.map(item => item.task);
 
-	
-	// const deleteItem = (id) => {
-	// 	// gets id of the button triggered
-	// 	const index = toDoList.map(todo => todo.id).indexOf(Number(id));
-	// 	// finds index of that id
-    
-	// 	const updatedList = [...toDoList];
-	// 	// splices array .splice(index, 1)
-	// 	updatedList.splice(index, 1);
-        
-	// 	setToDoList(updatedList);
-	
-	// };
+	const deleteItem = (id) => {
+		console.log(e.currentTarget.parentNode.id)
+		const handleDeleteRef=ref(database,"/");
+		remove(handleDeleteRef,e.currentTarget.parentNode);
+
+	};
 	
 	return (
 		<React.Fragment >
