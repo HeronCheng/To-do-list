@@ -16,12 +16,11 @@ const ListPage = () => {
 		onValue(toDoListArr, (snapshot) => {
 			data =snapshot.val();
 			data.forEach(item => list.push(item));
-			console.log(list)
 			setToDoList(toDoList.concat(list));
 		});
 	},[])
 	
-	console.log(toDoList)
+
 	const addTask = ( userInput ) => {
 		let newData={
 			id: toDoList.length + 1,
