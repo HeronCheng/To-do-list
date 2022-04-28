@@ -8,12 +8,13 @@ import {database, ref, push, onValue}  from "../firebaseConfig";
 
 
 const ListPage = () => {
-	let data;
-	let toDoListArr= ref(database, "/");
+	
 	const [ toDoList, setToDoList ] = useState("");
+	let toDoListArr= ref(database, "/");
 	onValue(toDoListArr, (snapshot) => {
-		data = snapshot.val();
+		let data = snapshot.val();
 		setToDoList(data);
+		console.log(toDoList)
 	});
 	console.log(toDoList)
 	const addTask = ( userInput ) => {
