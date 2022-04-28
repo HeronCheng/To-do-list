@@ -18,7 +18,7 @@ const ListPage = () => {
 			setToDoList([...toDoList,data[0]+data[1]+data[2]]);
 			console.log(toDoList)
 		});
-	},[ toDoList ])
+	},[])
 	
 	console.log(toDoList)
 	const addTask = ( userInput ) => {
