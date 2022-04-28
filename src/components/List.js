@@ -7,10 +7,9 @@ const List = ({toDoList,setToDoList}) => {
 	let toDoValue=toDoList.map(item => item.task);
 
 	const deleteItem = (id) => {
-		console.log(e.currentTarget.parentNode.id)
+		console.log(id)
 		const handleDeleteRef=ref(database,"/");
-		remove(handleDeleteRef,e.currentTarget.parentNode);
-
+		remove(handleDeleteRef,id);
 	};
 	
 	return (
