@@ -28,7 +28,7 @@ const ListPage = () => {
 		push(addTaskRef,newData);
 		
 		let copy = [...toDoList];
-		copy = [...copy, { id: toDoList.length + 1, task: userInput }];
+		copy = [...copy, newData];
 		setToDoList(copy);
 	}
 	return (
