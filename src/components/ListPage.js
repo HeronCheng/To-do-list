@@ -20,12 +20,13 @@ const ListPage = () => {
 	
 
 	const addTask = ( userInput ) => {
+		let realId=Math.random()
 		let newData={
-			id: toDoList.length ,
+			id: realId ,
 			task: userInput, 
 			complete:false
 		}
-		const addTaskRef=ref(database,"/"+toDoList.length);
+		const addTaskRef=ref(database,"/"+realId);
 		update(addTaskRef,newData);
 		
 		let copy = [...toDoList];

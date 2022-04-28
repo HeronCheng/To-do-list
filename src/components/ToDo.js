@@ -13,7 +13,6 @@ const ToDo = (props) => {
 		});
 		setToDoList(filtered);
 		let id=e.currentTarget.id;
-		console.log(id)
 
 		const handleDeleteRef=ref(database,"/"+id);
 		remove(handleDeleteRef);
