@@ -7,12 +7,12 @@ import AddForm from "./AddForm";
 import {database, ref, push, onValue}  from "../firebaseConfig";
 
 
-const ListPage = () => {
+const ListPage = async() => {
 	let data;
 	const [ toDoList, setToDoList ] = useState([]);
-	let toDoListArr= ref(database, "/");
+	let toDoListArr=ref(database, "/");
 	onValue(toDoListArr, (snapshot) => {
-		data = snapshot.val();
+		data =snapshot.val();
 		console.log(data[0]+data[1]+data[2])
 		setToDoList([...toDoList,data[0]+data[1]+data[2]]);
 		console.log(toDoList)
