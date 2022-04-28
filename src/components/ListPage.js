@@ -12,7 +12,6 @@ const ListPage = () => {
 	let toDoListArr= ref(database, "/");
 		onValue(toDoListArr, (snapshot) => {
 		data = snapshot.val();
-		console.log(data);
 	});
 
 	const [ toDoList, setToDoList ] = useState(data);

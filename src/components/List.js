@@ -15,8 +15,9 @@ const List = ({toDoList,setToDoList}) => {
 		setToDoList(updatedList);
 	
 	};
-	console.log(toDoList)
-	Object.values(toDoList).map(item => item.task);
+	
+	let toDoValue=Object.values(toDoList).map(item => item.task);
+	console.log(toDoValue);
 
 
 	return (
