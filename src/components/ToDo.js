@@ -1,17 +1,13 @@
 import React from "react";
 import deleteicon from "../img/garbage-can.png";
-import {database, ref,remove}  from "../firebaseConfig";
+
 
 const ToDo = (props) => {
 	const {todo, deleteItem}=props;
 	const handleDelete = (e) => {
 		e.preventDefault();
 		e.stopPropagation();
-		// deleteItem(e.currentTarget.parentNode.id);
-		console.log(e.currentTarget.parentNode.id)
-		const handleDeleteRef=ref(database,"/");
-		remove(handleDeleteRef,e.currentTarget.parentNode.id);
-
+		deleteItem(e.currentTarget.parentNode.id);
 	};
 	return (
 		<React.Fragment >
