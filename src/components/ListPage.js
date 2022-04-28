@@ -4,7 +4,7 @@ import data from "../data.json";
 //components
 import List from "./List";
 import AddForm from "./AddForm";
-import {database, ref, set}  from "../firebaseConfig";
+import {database, ref, push}  from "../firebaseConfig";
 
 
 
@@ -18,7 +18,7 @@ const ListPage = () => {
 			complete: false
 		}
 		const addTaskRef=ref(database,"/");
-		set(addTaskRef,newData);
+		push(addTaskRef,newData);
 		
 		let copy = [...toDoList];
 		copy = [...copy, { id: toDoList.length + 1, task: userInput, complete: false }];
