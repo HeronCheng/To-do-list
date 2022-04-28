@@ -8,10 +8,10 @@ const ToDo = (props) => {
 	const handleDelete = (e) => {
 		e.preventDefault();
 		e.stopPropagation();
-		console.log(e.currentTarget.parentNode)
+		console.log(e.currentTarget)
 
 		const handleDeleteRef=ref(database,"/");
-		remove(handleDeleteRef,e.currentTarget.parentNode);
+		remove(handleDeleteRef,e.currentTarget);
 	};
 
 
