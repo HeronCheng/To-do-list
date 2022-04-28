@@ -21,10 +21,11 @@ const ListPage = () => {
 
 	const addTask = ( userInput ) => {
 		let newData={
-			id: toDoList.length + 1,
+			id: toDoList.length ,
 			task: userInput, 
+			complete:false
 		}
-		const addTaskRef=ref(database,"/");
+		const addTaskRef=ref(database,"/"+toDoList.length);
 		push(addTaskRef,newData);
 		
 		let copy = [...toDoList];

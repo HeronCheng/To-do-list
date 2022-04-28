@@ -1,10 +1,13 @@
 [{
+    "id": 0,
+    "task": "Give dog a bath",
+    "complete":false
+  }, {
     "id": 1,
-    "task": "Give dog a bath"
+    "task": "Do laundry",
+    "complete":false
   }, {
     "id": 2,
-    "task": "Do laundry"
-  }, {
-    "id": 3,
-    "task": "Vacuum floor"
+    "task": "Vacuum floor",
+    "complete":false
   }]
