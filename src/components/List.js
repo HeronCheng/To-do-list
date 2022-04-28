@@ -25,7 +25,7 @@ const List = ({toDoList,setToDoList}) => {
 
 	return (
 		<React.Fragment >
-			{toDoListArr.map(todo => {
+			{toDoList.map(todo => {
 				return (
 					<>
 					<ToDo todo={todo} deleteItem={deleteItem} key={Math.random()} />
