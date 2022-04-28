@@ -16,6 +16,7 @@ const ListPage = () => {
 		onValue(toDoListArr, (snapshot) => {
 			data =snapshot.val();
 			console.log(typeof(data));
+			console.log(data);
 			data.forEach(item => list.push(item));
 			setToDoList(toDoList.concat(list));
 		});
