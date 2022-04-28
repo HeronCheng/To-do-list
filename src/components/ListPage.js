@@ -17,7 +17,7 @@ const ListPage = () => {
 			data =snapshot.val();
 			data.forEach(item => list.push(item));
 			console.log(list)
-			setToDoList([...toDoList,list])
+			setToDoList(toDoList.concat(list));
 		});
 	},[])
 	
