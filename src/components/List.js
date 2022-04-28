@@ -3,26 +3,23 @@ import ToDo from "./ToDo";
 
 
 const List = ({toDoList,setToDoList}) => {
-	console.log(toDoList);
+
 	let toDoValue=toDoList.map(item => item.task);
-	console.log(toDoValue);
+
 	
-	const deleteItem = (id) => {
-		// gets id of the button triggered
-		const index = toDoList.map(todo => todo.id).indexOf(Number(id));
-		// finds index of that id
+	// const deleteItem = (id) => {
+	// 	// gets id of the button triggered
+	// 	const index = toDoList.map(todo => todo.id).indexOf(Number(id));
+	// 	// finds index of that id
     
-		const updatedList = [...toDoList];
-		// splices array .splice(index, 1)
-		updatedList.splice(index, 1);
+	// 	const updatedList = [...toDoList];
+	// 	// splices array .splice(index, 1)
+	// 	updatedList.splice(index, 1);
         
-		setToDoList(updatedList);
+	// 	setToDoList(updatedList);
 	
-	};
+	// };
 	
-	
-
-
 	return (
 		<React.Fragment >
 			{toDoList.map(todo => {
