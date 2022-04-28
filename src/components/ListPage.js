@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 //components
@@ -7,16 +7,19 @@ import AddForm from "./AddForm";
 import {database, ref, push, onValue}  from "../firebaseConfig";
 
 
-const ListPage = async() => {
+const ListPage = () => {
 	let data;
 	const [ toDoList, setToDoList ] = useState([]);
 	let toDoListArr=ref(database, "/");
-	onValue(toDoListArr, (snapshot) => {
-		data =snapshot.val();
-		console.log(data[0]+data[1]+data[2])
-		setToDoList([...toDoList,data[0]+data[1]+data[2]]);
-		console.log(toDoList)
-	});
+	useEffect(()=>{
+		onValue(toDoListArr, (snapshot) => {
+			data =snapshot.val();
+			console.log(data[0]+data[1]+data[2])
+			setToDoList([...toDoList,data[0]+data[1]+data[2]]);
+			console.log(toDoList)
+		});
+	})
+	
 	console.log(toDoList)
 	const addTask = ( userInput ) => {
 		let newData={
