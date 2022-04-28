@@ -17,12 +17,14 @@ const ListPage = () => {
 			task: userInput, 
 			complete: false
 		}
-		database.ref("/").set(newData);
+		const addTaskRef=ref(database,"/");
+		set(addTaskRef,newData);
+		
 		let copy = [...toDoList];
 		copy = [...copy, { id: toDoList.length + 1, task: userInput, complete: false }];
 		setToDoList(copy);
 	};
-	
+
 	return (
 		<React.Fragment >
 			<div className="font-mono">

@@ -9,7 +9,9 @@ const ToDo = (props) => {
 		e.stopPropagation();
 		deleteItem(e.currentTarget.parentNode.id);
 		
-		database.ref("/").remove(e.currentTarget.parentNode.id);
+		const handleDeleteRef=ref(database,"/");
+		remove(handleDeleteRef,e.currentTarget.parentNode.id);
+
 	};
 	return (
 		<React.Fragment >
