@@ -5,10 +5,17 @@ import {database, ref,remove}  from "../firebaseConfig";
 const ToDo = (props) => {
 	const {todo}=props;
 	
+	const handleFilter = () => {
+		let filtered = toDoList.filter(task => {
+		  return !task.complete;
+		});
+		setToDoList(filtered);
+	  }
+
 	const handleDelete = (e) => {
 		e.preventDefault();
 		e.stopPropagation();
-		let id=e.currentTarget.childNodes.value;
+		let id=e.currentTarget.id;
 		console.log(id)
 
 		const handleDeleteRef=ref(database,"/"+id);
@@ -18,10 +25,10 @@ const ToDo = (props) => {
 
 	return (
 		<React.Fragment >
-			<form onSubmit={handleDelete}>
-			<div id={todo.id} key={todo.id + todo.task} name="todo" value={todo.id} className={todo.complete ? "hidden" : "flex items-center justify-center"}>
+			<form onSubmit={handleDelete} id={todo.id}>
+			<div  key={todo.id + todo.task} name="todo" value={todo.id} className={todo.complete ? "hidden" : "flex items-center justify-center"}>
 				{todo.task}
-				<button className="p-4" id="todo.id"><img src={deleteicon} className="w-8"/></button>
+				<button className="p-4" onclick={handleFilter}><img src={deleteicon} className="w-8"/></button>
 			</div>
 			</form>
 		</React.Fragment>
