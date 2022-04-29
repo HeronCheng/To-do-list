@@ -14,10 +14,16 @@ const ListPage = () => {
 	useEffect(()=>{
 		onValue(toDoListArr, (snapshot) => {
 			let predata =snapshot.val();
-			let data=Object.values(predata)
-			setToDoList(toDoList.concat(data));
+			if(predata===null){
+				setToDoList(toDoList);
+			}
+			else{
+				let data=Object.values(predata)
+				setToDoList(toDoList.concat(data));
+			}
 		});
 	},[])
+	
 	
 
 	const addTask = ( userInput ) => {
