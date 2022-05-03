@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "to-do-list-b9996",
+    "staging": "to-do-list-b9996"
+  },
+  "targets": {}
+}
