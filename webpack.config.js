@@ -12,6 +12,7 @@ module.exports={
 	output:{
 		filename:"main.js",
 		path:path.resolve( __dirname,"dist" ),
+		publicPath: '/'
 	},
 	plugins: [
 		new HtmlWebpackPlugin( {
@@ -25,10 +26,11 @@ module.exports={
 	},
 	devServer: {
 		host:"localhost",
-		port: 9000,
+		port: 3000,
 		compress: false,
 		open: true,
 		liveReload: true,
+		historyApiFallback: true,
 	},
 	module:{
 		rules:[

@@ -1,21 +1,24 @@
-import React  from "react";
+import React from "react";
 import "./tailwind.css";
-import { Route, Routes, HashRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter} from "react-router-dom";
 //components
 import Homepage from "./components/HomePage";
 import ListPage from "./components/ListPage";
+import Auth from "./components/Auth";
 
 
 const App = () => {
 	
 	return (
 		<React.Fragment>
-			<HashRouter>
+			<BrowserRouter>
 				<Routes>
 					<Route path= "/"  element = { <Homepage /> }/>
-					<Route path="/listpage" element = { <ListPage/> }/>
+					<Route path='/listpage' element={<Auth/>}>
+						<Route path='/listpage' element={<ListPage/>}/>
+					</Route>
 				</Routes>
-			</HashRouter>
+			</BrowserRouter>
 		</React.Fragment>
 	);
 };
